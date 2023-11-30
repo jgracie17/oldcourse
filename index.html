@@ -10,6 +10,18 @@
       font-family: 'Arial', sans-serif;
       text-align: center;
       margin: 50px;
+      color: navy;
+    }
+
+    #countdown {
+      font-size: 1.5em;
+      margin-top: 20px;
+    }
+
+    #swilcan-bridge {
+      max-width: 100%;
+      height: auto;
+      margin-top: 20px;
     }
   </style>
 </head>
@@ -19,6 +31,8 @@
   <h1>Is it Old Course day yet?</h1>
 
   <div id="countdown"></div>
+
+  <img id="swilcan-bridge" src="https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/39/af/65.jpg" alt="Swilcan Bridge">
 
   <script>
     // Function to calculate the days until May 29, 2024
@@ -45,6 +59,8 @@
     // Call the updateCountdown function when the page loads
     window.onload = function () {
       updateCountdown();
+      // Update the countdown every second
+      setInterval(updateCountdown, 1000);
     };
   </script>
 
