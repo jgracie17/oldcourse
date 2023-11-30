@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Old Course Day Countdown</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Is it Old Course day yet?</h1>
+
+  <div id="countdown"></div>
+
+  <script>
+    // Function to calculate the days until May 29, 2024
+    function daysUntilOldCourse() {
+      var currentDate = new Date();
+      var oldCourseDate = new Date('May 29, 2024');
+      var timeDiff = oldCourseDate - currentDate;
+      var daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+      return daysDiff;
+    }
+
+    // Function to update the countdown
+    function updateCountdown() {
+      var countdownElement = document.getElementById('countdown');
+      var daysUntilOldCourse = daysUntilOldCourse();
+
+      if (daysUntilOldCourse > 0) {
+        countdownElement.innerHTML = 'Not yet. Old Course day is in ' + daysUntilOldCourse + ' days.';
+      } else if (daysUntilOldCourse === 0) {
+        countdownElement.innerHTML = 'YES';
+      }
+    }
+
+    // Call the updateCountdown function when the page loads
+    window.onload = function () {
+      updateCountdown();
+    };
+  </script>
+
+</body>
+
+</html>
