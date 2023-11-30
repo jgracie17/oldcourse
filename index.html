@@ -35,34 +35,34 @@
   <img id="swilcan-bridge" src="https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/39/af/65.jpg" alt="Swilcan Bridge">
 
   <script>
-    // Function to calculate the days until May 29, 2024
-    function daysUntilOldCourse() {
-      var currentDate = new Date();
-      var oldCourseDate = new Date('May 29, 2024');
-      var timeDiff = oldCourseDate - currentDate;
-      var daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-      return daysDiff;
+  // Function to calculate the days until May 29, 2024
+  function calculateDaysUntilOldCourse() {
+    var currentDate = new Date();
+    var oldCourseDate = new Date('May 29, 2024');
+    var timeDiff = oldCourseDate - currentDate;
+    var daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+    return daysDiff;
+  }
+
+  // Function to update the countdown
+  function updateCountdown() {
+    var countdownElement = document.getElementById('countdown');
+    var daysUntilOldCourse = calculateDaysUntilOldCourse();
+
+    if (daysUntilOldCourse > 0) {
+      countdownElement.innerHTML = 'Not yet. Old Course day is in ' + daysUntilOldCourse + ' days.';
+    } else if (daysUntilOldCourse === 0) {
+      countdownElement.innerHTML = 'YES';
     }
+  }
 
-    // Function to update the countdown
-    function updateCountdown() {
-      var countdownElement = document.getElementById('countdown');
-      var daysUntilOldCourse = daysUntilOldCourse();
-
-      if (daysUntilOldCourse > 0) {
-        countdownElement.innerHTML = 'Not yet. Old Course day is in ' + daysUntilOldCourse + ' days.';
-      } else if (daysUntilOldCourse === 0) {
-        countdownElement.innerHTML = 'YES';
-      }
-    }
-
-    // Call the updateCountdown function when the page loads
-    window.onload = function () {
-      updateCountdown();
-      // Update the countdown every second
-      setInterval(updateCountdown, 1000);
-    };
-  </script>
+  // Call the updateCountdown function when the page loads
+  window.onload = function () {
+    updateCountdown();
+    // Update the countdown every second
+    setInterval(updateCountdown, 1000);
+  };
+</script>
 
 </body>
 
